@@ -1,6 +1,9 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
+#include <QList>
+#include "calculation.h"
+
 class Calculator
 {
 public:
@@ -14,8 +17,13 @@ public:
     double multiply(double a, double b);
     double divide(double a, double b);
 
+    const QList<Calculation>& getCalculations() const { return calculations; }
+
 private:
     Calculator() = default;
+    QList<Calculation> calculations;
+
+    void updateCalculations(double value1, double value2, double result, OperationType op);
 };
 
 #endif // CALCULATOR_H
