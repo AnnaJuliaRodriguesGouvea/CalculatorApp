@@ -6,25 +6,171 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>600</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>37</height>
-    </rect>
-   </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="gridLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>561</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayoutRoot">
+     <item row="0" column="0">
+      <widget class="QGroupBox" name="groupBoxCalculator">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>Calculator</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <widget class="QWidget" name="gridLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>201</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayoutCMain">
+         <item row="1" column="0">
+          <layout class="QGridLayout" name="gridLayoutChild">
+           <item row="4" column="0">
+            <layout class="QVBoxLayout" name="verticalLayoutButton">
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QPushButton" name="pushButtonCalculate">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Calculate</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="0">
+            <layout class="QVBoxLayout" name="verticalLayoutResult">
+             <item>
+              <widget class="QLabel" name="labelResult">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Result:</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayoutInputs">
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLineEdit" name="lineEditValue1">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QComboBox" name="comboBoxOperation">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLineEdit" name="lineEditValue2">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QGroupBox" name="groupBoxHistory">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>History</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <widget class="QWidget" name="gridLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>231</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayoutHMain">
+         <item row="0" column="0" alignment="Qt::AlignHCenter">
+          <widget class="QTableView" name="tableViewHistory"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
