@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     setBackgroundColorCentralWidget();
+    configDoubleSpinBox();
     createItensComboBoxOperation();
     createTableWidgetHistory();
 
@@ -35,6 +36,13 @@ void MainWindow::setBackgroundColorCentralWidget()
     pal.setColor(QPalette::Window, "#E5DDC5");
     ui->centralwidget->setAutoFillBackground(true);
     ui->centralwidget->setPalette(pal);
+}
+
+void MainWindow::configDoubleSpinBox() {
+    ui->doubleBoxValue1->setMinimum(-1000.0);
+    ui->doubleBoxValue1->setMaximum(1000.0);
+    ui->doubleBoxValue2->setMinimum(-1000.0);
+    ui->doubleBoxValue2->setMaximum(1000.0);
 }
 
 void MainWindow::createItensComboBoxOperation()

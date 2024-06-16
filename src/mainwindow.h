@@ -23,6 +23,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     void setBackgroundColorCentralWidget();
+    void configDoubleSpinBox();
     void createItensComboBoxOperation();
     void createTableWidgetHistory();
     void updateHistory();
