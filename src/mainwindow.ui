@@ -70,16 +70,17 @@ QGroupBox::title {
             <property name="font">
              <font>
               <family>Arial</family>
-              <pointsize>16</pointsize>
+              <pointsize>-1</pointsize>
              </font>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton 
 {
 	background-color: white;
+    font-size: 14px;
 	border: 1px solid #808080;
 	border-radius: 5px;
-	padding: 5px; 
+	padding: 3px; 
 	width: 100px;
 }
 QPushButton:hover
@@ -118,8 +119,14 @@ QPushButton:hover
             <property name="font">
              <font>
               <family>Arial</family>
-              <pointsize>16</pointsize>
+              <pointsize>-1</pointsize>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QDoubleSpinBox {
+    font-size: 16px;
+	min-width: 120px
+}</string>
             </property>
            </widget>
           </item>
@@ -131,6 +138,11 @@ QPushButton:hover
               <pointsize>16</pointsize>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox {
+	min-width:30px
+}</string>
+            </property>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter">
@@ -138,8 +150,14 @@ QPushButton:hover
             <property name="font">
              <font>
               <family>Arial</family>
-              <pointsize>16</pointsize>
+              <pointsize>-1</pointsize>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QDoubleSpinBox {
+    font-size: 16px;
+	min-width: 120px
+}</string>
             </property>
            </widget>
           </item>
