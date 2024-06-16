@@ -32,6 +32,19 @@
       <pointsize>20</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    	background-color: #F1EEDC;
+    	margin-top: 4ex;
+	border-radius:15px;
+}
+
+QGroupBox::title {
+    	subcontrol-origin: margin;
+	subcontrol-position: top center;
+    	padding: 0 3px;
+}</string>
+    </property>
     <property name="title">
      <string>Calculator</string>
     </property>
@@ -43,7 +56,7 @@
       <rect>
        <x>30</x>
        <y>30</y>
-       <width>211</width>
+       <width>231</width>
        <height>231</height>
       </rect>
      </property>
@@ -59,6 +72,20 @@
               <family>Arial</family>
               <pointsize>16</pointsize>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton 
+{
+	background-color: white;
+	border: 1px solid #808080;
+	border-radius: 5px;
+	padding: 5px; 
+	width: 100px;
+}
+QPushButton:hover
+{
+	background-color: #C0C0C0; 
+}</string>
             </property>
             <property name="text">
              <string>Calculate</string>
@@ -146,19 +173,6 @@
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayoutHistory">
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>10</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
      <item alignment="Qt::AlignHCenter">
       <widget class="QLabel" name="labelHistory">
        <property name="font">
@@ -182,6 +196,31 @@
          <family>Arial</family>
          <pointsize>14</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableWidget 
+{
+	background-color: #F1EEDC;
+	border-radius: 10px;
+}
+QHeaderView::section 
+{
+	background-color: #F1EEDC;
+	color: black;
+	border:1px solid black;
+}
+QTableWidget::item 
+{
+	text-align: center;
+}
+QScrollBar:vertical 
+{
+	background: #F1EEDC;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical
+{
+	width: 0; 
+}</string>
        </property>
        <property name="horizontalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOff</enum>

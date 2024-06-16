@@ -5,7 +5,7 @@
 #include "calculator.h"
 
 namespace {
-constexpr QSize g_windowSize(640, 300);
+constexpr QSize g_windowSize(650, 300);
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->setupUi(this);
 
+    setBackgroundColorCentralWidget();
     createItensComboBoxOperation();
     createTableWidgetHistory();
 
@@ -26,6 +27,14 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setBackgroundColorCentralWidget()
+{
+    QPalette pal = QPalette();
+    pal.setColor(QPalette::Window, "#E5DDC5");
+    ui->centralwidget->setAutoFillBackground(true);
+    ui->centralwidget->setPalette(pal);
 }
 
 void MainWindow::createItensComboBoxOperation()
@@ -51,6 +60,12 @@ void MainWindow::createTableWidgetHistory()
     ui->tableWidgetHistory->setColumnWidth(3, 100);
 
     ui->tableWidgetHistory->setFixedWidth(300);
+    ui->tableWidgetHistory->setFixedHeight(230);
+    ui->tableWidgetHistory->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableWidgetHistory->verticalHeader()->setVisible(false);
+
+    ui->verticalLayoutHistory->setContentsMargins(0, 20, 0, 20);
+
 }
 
 void MainWindow::updateHistory()
