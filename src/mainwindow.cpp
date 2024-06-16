@@ -81,6 +81,11 @@ void MainWindow::updateHistory()
         QTableWidgetItem *item3 = new QTableWidgetItem(QString::number(calc.getValue2()));
         QTableWidgetItem *item4 = new QTableWidgetItem(QString::number(calc.getResult()));
 
+        item1->setTextAlignment(Qt::AlignCenter);
+        item2->setTextAlignment(Qt::AlignCenter);
+        item3->setTextAlignment(Qt::AlignCenter);
+        item4->setTextAlignment(Qt::AlignCenter);
+
         ui->tableWidgetHistory->setItem(i, 0, item1);
         ui->tableWidgetHistory->setItem(i, 1, item2);
         ui->tableWidgetHistory->setItem(i, 2, item3);

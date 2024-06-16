@@ -1,47 +1,72 @@
 #include "calculator.h"
+#include <QDebug>
+#include <QMessageBox>
+
+double Calculator::handleException(const std::exception& e) {
+    qDebug() << "Exception caught: " << e.what();
+    QMessageBox::critical(nullptr, "Error", QString::fromStdString(e.what()));
+    return std::numeric_limits<double>::quiet_NaN();
+}
 
 double Calculator::add(double a, double b) {
-    if (!std::isfinite(a) || !std::isfinite(b)) {
-        throw std::invalid_argument("Input values ​​are not valid.");
+    try {
+        if (!std::isfinite(a) || !std::isfinite(b)) {
+            throw std::invalid_argument("Input values ​​are not valid.");
+        }
+
+        double result = a + b;
+        updateCalculations(a, b, result, Addition);
+        return result;
+    } catch (const std::invalid_argument& e) {
+        return handleException(e);
     }
 
-    double result = a + b;
-    updateCalculations(a, b, result, Addition);
-    return result;
 }
 
 double Calculator::subtract(double a, double b) {
-    if (!std::isfinite(a) || !std::isfinite(b)) {
-        throw std::invalid_argument("Input values ​​are not valid.");
-    }
+    try {
+        if (!std::isfinite(a) || !std::isfinite(b)) {
+            throw std::invalid_argument("Input values ​​are not valid.");
+        }
 
-    double result = a - b;
-    updateCalculations(a, b, result, Subtraction);
-    return result;
+        double result = a - b;
+        updateCalculations(a, b, result, Subtraction);
+        return result;
+    } catch (const std::invalid_argument& e) {
+        return handleException(e);
+    }
 }
 
 double Calculator::multiply(double a, double b) {
-    if (!std::isfinite(a) || !std::isfinite(b)) {
-        throw std::invalid_argument("Input values ​​are not valid.");
-    }
+    try {
+        if (!std::isfinite(a) || !std::isfinite(b)) {
+            throw std::invalid_argument("Input values ​​are not valid.");
+        }
 
-    double result = a * b;
-    updateCalculations(a, b, result, Multiplication);
-    return result;
+        double result = a * b;
+        updateCalculations(a, b, result, Multiplication);
+        return result;
+    } catch (const std::invalid_argument& e) {
+        return handleException(e);
+    }
 }
 
 double Calculator::divide(double a, double b) {
-    if (!std::isfinite(a) || !std::isfinite(b)) {
-       throw std::invalid_argument("Input values ​​are not valid.");
-    }
+    try {
+        if (!std::isfinite(a) || !std::isfinite(b)) {
+            throw std::invalid_argument("Input values ​​are not valid.");
+        }
 
-    if (b == 0.0) {
-        throw std::invalid_argument("Division by zero is not allowed.");
-    }
+        if (b == 0.0) {
+            throw std::invalid_argument("Division by zero is not allowed.");
+        }
 
-    double result = a / b;
-    updateCalculations(a, b, result, Division);
-    return result;
+        double result = a / b;
+        updateCalculations(a, b, result, Division);
+        return result;
+    } catch (const std::invalid_argument& e) {
+        return handleException(e);
+    }
 }
 
 void Calculator::updateCalculations(double value1, double value2, double result, OperationType op) {

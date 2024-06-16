@@ -209,10 +209,6 @@ QHeaderView::section
 	color: black;
 	border:1px solid black;
 }
-QTableWidget::item 
-{
-	text-align: center;
-}
 QScrollBar:vertical 
 {
 	background: #F1EEDC;

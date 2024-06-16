@@ -23,6 +23,7 @@ private:
     Calculator() = default;
     QList<Calculation> calculations;
 
+    double handleException(const std::exception& e);
     void updateCalculations(double value1, double value2, double result, OperationType op);
 };
 
