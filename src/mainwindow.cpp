@@ -40,7 +40,7 @@ void MainWindow::setBackgroundColorCentralWidget()
 void MainWindow::createItensComboBoxOperation()
 {
     // Add items to operation combo box
-    ui->comboBoxOperation->addItem("+", Addition);
+    ui->comboBoxOperation->addItem("+", Sum);
     ui->comboBoxOperation->addItem("-", Subtraction);
     ui->comboBoxOperation->addItem("*", Multiplication);
     ui->comboBoxOperation->addItem("/", Division);
@@ -103,7 +103,7 @@ void MainWindow::on_pushButtonCalculate_clicked()
     Calculator& calc = Calculator::getInstance();
 
     switch (op) {
-    case Addition: result = calc.add(value1, value2); break;
+    case Sum: result = calc.sum(value1, value2); break;
     case Subtraction: result = calc.subtract(value1, value2); break;
     case Multiplication: result = calc.multiply(value1, value2); break;
     case Division: result = calc.divide(value1, value2); break;

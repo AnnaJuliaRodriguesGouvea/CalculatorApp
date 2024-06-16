@@ -2,7 +2,7 @@
 #define OPERATIONTYPE_H
 
 enum OperationType {
-    Addition,
+    Sum,
     Subtraction,
     Multiplication,
     Division

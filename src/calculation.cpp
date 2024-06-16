@@ -2,7 +2,7 @@
 
 QString Calculation::getOperationString() const {
     switch (operationType) {
-    case Addition: return "+";
+    case Sum: return "+";
     case Subtraction: return "-";
     case Multiplication: return "*";
     case Division: return "/";

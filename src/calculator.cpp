@@ -8,14 +8,14 @@ double Calculator::handleException(const std::exception& e) {
     return std::numeric_limits<double>::quiet_NaN();
 }
 
-double Calculator::add(double a, double b) {
+double Calculator::sum(double a, double b) {
     try {
         if (!std::isfinite(a) || !std::isfinite(b)) {
             throw std::invalid_argument("Input values ​​are not valid.");
         }
 
         double result = a + b;
-        updateCalculations(a, b, result, Addition);
+        updateCalculations(a, b, result, Sum);
         return result;
     } catch (const std::invalid_argument& e) {
         return handleException(e);
